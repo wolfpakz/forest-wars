@@ -1,1 +1,8 @@
-/* CSS declarations go here */
+    body {
+      margin: 0;
+    }
+
+    rect {
+      stroke: #fff;
+      stroke-width: .1px;
+    }
