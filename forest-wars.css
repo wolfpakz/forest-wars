@@ -1,8 +1,13 @@
-    body {
-      margin: 0;
-    }
+body {
+  margin: 0;
+}
 
-    rect {
-      stroke: #fff;
-      stroke-width: .1px;
-    }
+rect {
+  stroke: #fff;
+  stroke-width: .1px;
+}
+
+#board {
+  width: 500px;
+  height: 500px;
+}
