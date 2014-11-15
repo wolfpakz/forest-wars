@@ -10,7 +10,8 @@ Template.board.helpers({
 
 Template.board.events({
   'click #board rect': function(click) {
+    var cell  = click.target;
     var datum = this;
-    ForestWars.burnCell(click.target);
+    ForestWars.burnCell(cell, datum);
   }
 });
