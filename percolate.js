@@ -1,11 +1,11 @@
-if (Meteor.isClient) {
+if (Meteor.isClient && false) {
   var cellSize = 20;
   var width = Math.floor(500 / cellSize) * cellSize;
   var height = Math.floor(500 / cellSize) * cellSize;
   var Fun = {
     columns: width / cellSize,
     rows: height / cellSize,
-    p: .65,
+    p: .50,
     rng: "pseudo",
     burnDelay: 125,
     burnTime: 3500,
@@ -94,7 +94,7 @@ if (Meteor.isClient) {
 
   Fun.burnNeighbors = function (board, cell) {
     var datum = cell.data()[0];
-    console.log(cell.data())
+
     if (datum.burnt) {
       return;
     } else {
@@ -114,7 +114,6 @@ if (Meteor.isClient) {
   Fun.start = function () {
     // Create the board
     var board = Fun.createBoard();
-    console.log(board);
 
     // Bind the data
     var data = Fun.buildGrid();
@@ -135,7 +134,7 @@ if (Meteor.isClient) {
 
     // Add Neighbors
     Fun.addNeighbors(data);
-console.log(data)
+
     // Pick a tree to turn
     var burnIndex = Math.floor(Math.random() * data.length);
     Fun.burnCell(board, burnIndex);
@@ -144,11 +143,7 @@ console.log(data)
   //
   // Start the FUN
   //
-  // setTimeout(function() {
-  //   Fun.start();
-  // }, 5000);
-Template.board.rendered = function() {
-    Fun.start()
+  Template.board.rendered = function () {
+    Fun.start();
   }
-
 }
