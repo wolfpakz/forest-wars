@@ -1,6 +1,8 @@
 Meteor.startup(function () {
-  if (Boards.find().count() === 0) {
+  if (Games.find().count() === 0) {
     // Create an initial board for development purposes
-    Boards.insert(ForestWars.generateRectangularBoard(20, 20));
+    Games.insert({
+      board: ForestWars.generateRectangularBoard(20, 20)
+    });
   }
 });

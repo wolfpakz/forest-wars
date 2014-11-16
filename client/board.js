@@ -3,8 +3,8 @@ Template.board.rendered = function () {
 };
 
 Template.board.helpers({
-  board: function() {
-    return Session.get('board');
+  game: function() {
+    return Session.get('game');
   }
 });
 
