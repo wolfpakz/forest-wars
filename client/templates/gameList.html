@@ -1,7 +1,13 @@
 <template name="gameList">
-  <div class="game-list">
-    {{#each games}}
-      {{> game}}
-    {{/each}}
+  <div class="row">
+    <p> <button type="button" id="create-game" class="btn btn-success">Create a game</button> </p>
+  </div>
+
+  <div class="row">
+    <div class="game-list well col-md-12">
+      {{#each games}}
+        {{> game}}
+      {{/each}}
+    </div>
   </div>
 </template>

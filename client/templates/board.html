@@ -1,7 +1,13 @@
 <template name="board">
-	<svg id="board">
-    {{#each game.board.cells}}
-      <rect></rect>
-    {{/each}}
-	</svg>
+
+  <div class="row">
+    <div class="col-md-8 well">
+      <svg id="board">
+         {{#each game.board.cells}}
+           <rect></rect>
+         {{/each}}
+     	</svg>
+    </div>
+  </div>
+
 </template>
