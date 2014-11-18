@@ -1,5 +1,6 @@
 Template.board.rendered = function () {
   ForestWars.initializeBoard();
+  ForestWars.startAnimation();
 };
 
 Template.board.helpers({
@@ -12,6 +13,9 @@ Template.board.events({
   'click #board rect': function(click) {
     var cell  = click.target;
     var datum = this;
-    ForestWars.burnCell(cell, datum);
+
+    if (datum.tree) {
+      ForestWars.sparkTree(datum.index);
+    }
   }
 });
